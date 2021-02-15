@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MnjMfgCutlyrcntrlDView"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="FabInsRolls1"
+    ViewObjectName="model.view.lov.FabInsRolls"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RollNo"
+    ListVOName="FabInsRolls1"
+    ListRangeSize="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RollNo"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="RolLengthYds"/>
+      <Item Value="Shade"/>
+      <Item Value="Shrinkage"/>
+      <Item Value="FabWeight"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RollNo"/>
+      <Item Value="RollLength"/>
+      <Item Value="Shade"/>
+      <Item Value="Shrinkage"/>
+      <Item Value="Ounce"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RollNo"/>
+      <Item Value="RollLength"/>
+      <Item Value="Shade"/>
+      <Item Value="Shrinkage"/>
+      <Item Value="Ounce"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT MnjMfgCutlyrcntrlD.LINE_ID, 
+       MnjMfgCutlyrcntrlD.DETAIL_ID, 
+       MnjMfgCutlyrcntrlD.ROLL_NO, 
+       MnjMfgCutlyrcntrlD.ROL_LENGTH_YDS, 
+       MnjMfgCutlyrcntrlD.ROL_LENGTH_INCH, 
+       MnjMfgCutlyrcntrlD.SHRINKAGE, 
+       MnjMfgCutlyrcntrlD.SHADE, 
+       MnjMfgCutlyrcntrlD.FAB_WEIGHT, 
+       MnjMfgCutlyrcntrlD.NO_OF_PLY, 
+       MnjMfgCutlyrcntrlD.REM_PLY, 
+       MnjMfgCutlyrcntrlD.CUT_QTY, 
+       MnjMfgCutlyrcntrlD.END_BIT_YDS, 
+       MnjMfgCutlyrcntrlD.END_BIT_INCH, 
+       MnjMfgCutlyrcntrlD.REMARKS, 
+       MnjMfgCutlyrcntrlD.S_NO, 
+       MnjMfgCutlyrcntrlD.SUPP_ROLL_NO
+FROM MNJ_MFG_CUTLYRCNTRL_D MnjMfgCutlyrcntrlD
+ORDER BY MnjMfgCutlyrcntrlD.DETAIL_ID]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="MnjMfgCutlyrcntrlD"
+    Entity="model.entities.MnjMfgCutlyrcntrlD"/>
+  <ViewAttribute
+    Name="LineId"
+    PrecisionRule="true"
+    EntityAttrName="LineId"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="LINE_ID"/>
+  <ViewAttribute
+    Name="DetailId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DetailId"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="DETAIL_ID"/>
+  <ViewAttribute
+    Name="RollNo"
+    PrecisionRule="true"
+    EntityAttrName="RollNo"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="ROLL_NO"
+    LOVName="LOV_RollNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RolLengthYds"
+    PrecisionRule="true"
+    EntityAttrName="RolLengthYds"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="ROL_LENGTH_YDS"/>
+  <ViewAttribute
+    Name="RolLengthInch"
+    PrecisionRule="true"
+    EntityAttrName="RolLengthInch"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="ROL_LENGTH_INCH"/>
+  <ViewAttribute
+    Name="Shrinkage"
+    PrecisionRule="true"
+    EntityAttrName="Shrinkage"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="SHRINKAGE"/>
+  <ViewAttribute
+    Name="Shade"
+    PrecisionRule="true"
+    EntityAttrName="Shade"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="SHADE"/>
+  <ViewAttribute
+    Name="FabWeight"
+    PrecisionRule="true"
+    EntityAttrName="FabWeight"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="FAB_WEIGHT"/>
+  <ViewAttribute
+    Name="NoOfPly"
+    PrecisionRule="true"
+    EntityAttrName="NoOfPly"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="NO_OF_PLY"/>
+  <ViewAttribute
+    Name="RemPly"
+    PrecisionRule="true"
+    EntityAttrName="RemPly"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="REM_PLY"/>
+  <ViewAttribute
+    Name="CutQty"
+    PrecisionRule="true"
+    EntityAttrName="CutQty"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="CUT_QTY"/>
+  <ViewAttribute
+    Name="EndBitYds"
+    PrecisionRule="true"
+    EntityAttrName="EndBitYds"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="END_BIT_YDS"/>
+  <ViewAttribute
+    Name="EndBitInch"
+    PrecisionRule="true"
+    EntityAttrName="EndBitInch"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="END_BIT_INCH"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="SNo"
+    PrecisionRule="true"
+    EntityAttrName="SNo"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="S_NO"/>
+  <ViewAttribute
+    Name="SuppRollNo"
+    PrecisionRule="true"
+    EntityAttrName="SuppRollNo"
+    EntityUsage="MnjMfgCutlyrcntrlD"
+    AliasName="SUPP_ROLL_NO"/>
+</ViewObject>

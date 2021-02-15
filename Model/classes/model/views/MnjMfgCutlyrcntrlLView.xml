@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MnjMfgCutlyrcntrlLView"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="CutNoLov1"
+    ViewObjectName="model.view.lov.CutNoLov"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CutNo"
+    ListVOName="CutNoLov1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_CutNo_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CutNo"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="MarkerId"/>
+      <Item Value="ActualConsumption"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CutNo"/>
+      <Item Value="MarkerId"/>
+      <Item Value="ActualConsumption"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CutNo"/>
+      <Item Value="MarkerId"/>
+      <Item Value="ActualConsumption"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT MnjMfgCutlyrcntrlL.HEADER_ID, 
+       MnjMfgCutlyrcntrlL.LINE_ID, 
+       MnjMfgCutlyrcntrlL.CUT_NO, 
+       MnjMfgCutlyrcntrlL.MARKER_ID, 
+       MnjMfgCutlyrcntrlL.START_TIME, 
+       MnjMfgCutlyrcntrlL.END_TIME, 
+       MnjMfgCutlyrcntrlL.MIN_END_BIT, 
+       MnjMfgCutlyrcntrlL.MIN_BUN_QTY, 
+       MnjMfgCutlyrcntrlL.MAX_BUN_QTY,
+       MnjMfgCutlyrcntrlL.Time_Cal,
+       MnjMfgCutlyrcntrlL.Actual_Consumption
+
+FROM MNJ_MFG_CUTLYRCNTRL_L MnjMfgCutlyrcntrlL]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="MnjMfgCutlyrcntrlL"
+    Entity="model.entities.MnjMfgCutlyrcntrlL"/>
+  <ViewAttribute
+    Name="HeaderId"
+    PrecisionRule="true"
+    EntityAttrName="HeaderId"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="HEADER_ID"/>
+  <ViewAttribute
+    Name="LineId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LineId"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="LINE_ID"/>
+  <ViewAttribute
+    Name="CutNo"
+    LOVName="LOV_CutNo"
+    PrecisionRule="true"
+    EntityAttrName="CutNo"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="CUT_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MarkerId"
+    PrecisionRule="true"
+    EntityAttrName="MarkerId"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="MARKER_ID"/>
+  <ViewAttribute
+    Name="StartTime"
+    PrecisionRule="true"
+    EntityAttrName="StartTime"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="START_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.views.MnjMfgCutlyrcntrlLView.StartTime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.views.MnjMfgCutlyrcntrlLView.StartTime_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EndTime"
+    PrecisionRule="true"
+    EntityAttrName="EndTime"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="END_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.views.MnjMfgCutlyrcntrlLView.EndTime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.views.MnjMfgCutlyrcntrlLView.EndTime_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MinEndBit"
+    PrecisionRule="true"
+    EntityAttrName="MinEndBit"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="MIN_END_BIT"/>
+  <ViewAttribute
+    Name="MinBunQty"
+    PrecisionRule="true"
+    EntityAttrName="MinBunQty"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="MIN_BUN_QTY"/>
+  <ViewAttribute
+    Name="MaxBunQty"
+    PrecisionRule="true"
+    EntityAttrName="MaxBunQty"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="MAX_BUN_QTY"/>
+  <ViewAttribute
+    Name="TimeCal"
+    PrecisionRule="true"
+    EntityAttrName="TimeCal"
+    EntityUsage="MnjMfgCutlyrcntrlL"
+    AliasName="TIME_CAL"/>
+  <ViewAttribute
+    Name="ActualConsumption"
+    PrecisionRule="true"
+    AliasName="ACTUAL_CONSUMPTION"
+    EntityAttrName="ActualConsumption"
+    EntityUsage="MnjMfgCutlyrcntrlL"/>
+  <ViewLinkAccessor
+    Name="MnjMfgCutlyrcntrlDView"
+    ViewLink="model.views.viewlinks.MnjMfgCutlyrcntrlDFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BundleDetailVO"
+    ViewLink="model.views.viewlinks.LineBundleDetVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

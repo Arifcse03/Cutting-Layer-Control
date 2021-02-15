@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MnjCutlyrcntrlOffstandarFkAssoc"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="MnjCutlyrcntrlOffstandardL"
+    Cardinality="1"
+    Source="true"
+    Owner="model.entities.MnjCutlyrcntrlOffstandardL">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MnjCutlyrcntrlOffstandardL"/>
+      <Attr Name="_foreignKey"
+        Value="model.entities.MnjCutlyrcntrlOffstandardL.MnjCutlyrcntrlOffstandardPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjCutlyrcntrlOffstandardL.DetailId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="MnjCutlyrcntrlOffstandardD"
+    Cardinality="-1"
+    Owner="model.entities.MnjCutlyrcntrlOffstandardD">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MnjCutlyrcntrlOffstandardD"/>
+      <Attr Name="_foreignKey"
+        Value="model.entities.MnjCutlyrcntrlOffstandardD.MnjCutlyrcntrlOffstandarFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjCutlyrcntrlOffstandardD.DetailId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="QueryPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MnjMfgCutlyrcntrlHView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjMfgCutlyrcntrlHView1Iterator"/>
+    <searchRegion Criteria="SearchByDocNo"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MnjMfgCutlyrcntrlHView1Iterator"
+                  id="SearchByDocNoQuery"/>
+    <invokeAction id="setSessionValExe" Binds="setSessionValues"
+                  Refresh="always"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+          id="MnjMfgCutlyrcntrlHView1">
+      <nodeDefinition DefName="model.views.MnjMfgCutlyrcntrlHView"
+                      Name="MnjMfgCutlyrcntrlHView10">
+        <AttrNames>
+          <Item Value="HeaderNo"/>
+          <Item Value="TableNo"/>
+          <Item Value="DocDate"/>
+          <Item Value="AddLayLength"/>
+          <Item Value="RPlanNo"/>
+          <Item Value="MinEndBit"/>
+          <Item Value="MinBunQty"/>
+          <Item Value="MaxBunQty"/>
+          <Item Value="BuyerName"/>
+          <Item Value="Style"/>
+          <Item Value="Season"/>
+          <Item Value="CutNumberLine"/>
+          <Item Value="MarkerIdLine"/>
+          <Item Value="PocId"/>
+          <Item Value="CustomerName"/>
+          <Item Value="StyleNew"/>
+          <Item Value="SeasonNew"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="setSessionValues"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respAppl" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+            id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

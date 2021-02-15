@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="EditPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MnjMfgCutlyrcntrlHView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjMfgCutlyrcntrlHView1Iterator"/>
+    <iterator Binds="MnjMfgCutlyrcntrlLView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjMfgCutlyrcntrlLView1Iterator"/>
+    <searchRegion Binds="MnjMfgCutlyrcntrlLView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjMfgCutlyrcntrlLView1Query"/>
+    <iterator Binds="MnjMfgCutlyrcntrlDView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjMfgCutlyrcntrlDView1Iterator"/>
+    <searchRegion Binds="MnjMfgCutlyrcntrlDView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjMfgCutlyrcntrlDView1Query"/>
+    <iterator Binds="RollNosVO1" RangeSize="2000"
+              DataControl="AppModuleDataControl" id="RollNosVO1Iterator"/>
+    <searchRegion Binds="RollNosVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RollNosVO1Query"/>
+    <iterator Binds="BundleDetailVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="BundleDetailVO1Iterator"/>
+    <searchRegion Binds="BundleDetailVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BundleDetailVO1Query"/>
+    <iterator Binds="MnjCutlyrcntrlWorkingpwrLView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjCutlyrcntrlWorkingpwrLView1Iterator"/>
+    <searchRegion Binds="MnjCutlyrcntrlWorkingpwrLView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjCutlyrcntrlWorkingpwrLView1Query"/>
+    <iterator Binds="MnjCutlyrcntrlOffstandardLView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjCutlyrcntrlOffstandardLView1Iterator"/>
+    <searchRegion Binds="MnjCutlyrcntrlOffstandardLView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjCutlyrcntrlOffstandardLView1Query"/>
+    <iterator Binds="MnjCutlyrcntrlOffstandardDView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjCutlyrcntrlOffstandardDView1Iterator"/>
+    <searchRegion Binds="MnjCutlyrcntrlOffstandardDView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjCutlyrcntrlOffstandardDView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="HeaderNo">
+      <AttrNames>
+        <Item Value="HeaderNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="DocDate">
+      <AttrNames>
+        <Item Value="DocDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="MinEndBit">
+      <AttrNames>
+        <Item Value="MinEndBit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="MinBunQty">
+      <AttrNames>
+        <Item Value="MinBunQty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="MaxBunQty">
+      <AttrNames>
+        <Item Value="MaxBunQty"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="MnjMfgCutlyrcntrlLView1Iterator"
+          id="MnjMfgCutlyrcntrlLView1">
+      <nodeDefinition DefName="model.views.MnjMfgCutlyrcntrlLView"
+                      Name="MnjMfgCutlyrcntrlLView10">
+        <AttrNames>
+          <Item Value="CutNo"/>
+          <Item Value="MarkerId"/>
+          <Item Value="StartTime"/>
+          <Item Value="EndTime"/>
+          <Item Value="MinEndBit"/>
+          <Item Value="MinBunQty"/>
+          <Item Value="MaxBunQty"/>
+          <Item Value="TimeCal"/>
+          <Item Value="ActualConsumption"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MnjMfgCutlyrcntrlLView1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="MnjMfgCutlyrcntrlLView1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="MnjMfgCutlyrcntrlDView1Iterator"
+          id="MnjMfgCutlyrcntrlDView1">
+      <nodeDefinition DefName="model.views.MnjMfgCutlyrcntrlDView"
+                      Name="MnjMfgCutlyrcntrlDView10">
+        <AttrNames>
+          <Item Value="RollNo"/>
+          <Item Value="RolLengthYds"/>
+          <Item Value="RolLengthInch"/>
+          <Item Value="Shrinkage"/>
+          <Item Value="Shade"/>
+          <Item Value="FabWeight"/>
+          <Item Value="NoOfPly"/>
+          <Item Value="RemPly"/>
+          <Item Value="CutQty"/>
+          <Item Value="EndBitYds"/>
+          <Item Value="EndBitInch"/>
+          <Item Value="Remarks"/>
+          <Item Value="SNo"/>
+          <Item Value="SuppRollNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MnjMfgCutlyrcntrlDView1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <methodAction id="createLineAction"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="createLineAction"
+                  IsViewObjectMethod="false"/>
+    <tree IterBinding="RollNosVO1Iterator" id="RollNosVO1">
+      <nodeDefinition DefName="model.view.lov.RollNosVO" Name="RollNosVO10">
+        <AttrNames>
+          <Item Value="RollNo"/>
+          <Item Value="MarkLength"/>
+          <Item Value="MarkLength2"/>
+          <Item Value="ShrinkPrcnt"/>
+          <Item Value="Shade"/>
+          <Item Value="Lay"/>
+          <Item Value="LayRemQty"/>
+          <Item Value="FabricContain"/>
+          <Item Value="CutQty"/>
+          <Item Value="EndBit"/>
+          <Item Value="EndBit2"/>
+          <Item Value="Flag" Binds="Flag"/>
+          <Item Value="CutWidth"/>
+          <Item Value="SuppRollNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="RollNosVO1Iterator" id="Flag" DTSupportsMRU="false"
+            StaticList="true">
+      <AttrNames>
+        <Item Value="Flag"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
+    <methodAction id="setRollwhereClause"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setRollwhereClause"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="FillRollLines"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="FillRollLines"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="calcDet" InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="calcDet"
+                  IsViewObjectMethod="false"/>
+    <tree IterBinding="BundleDetailVO1Iterator" id="BundleDetailVO1">
+      <nodeDefinition DefName="model.views.BundleDetailVO"
+                      Name="BundleDetailVO10">
+        <AttrNames>
+          <Item Value="BundleNo"/>
+          <Item Value="FromPieceNo"/>
+          <Item Value="SeqNo"/>
+          <Item Value="Shade"/>
+          <Item Value="SizeValue"/>
+          <Item Value="SizlineId"/>
+          <Item Value="Style"/>
+          <Item Value="ToPieceNo"/>
+          <Item Value="Remarks"/>
+          <Item Value="TotalBundleQuantity"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BundleDetailVO1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BundleDetailVO1Iterator" id="Delete2"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="makeBundles"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="makeBundles"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="callMatrix"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callMatrix"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AppModuleDataControl.methodResults.callMatrix_AppModuleDataControl_dataProvider_callMatrix_result"/>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="BuyerId">
+      <AttrNames>
+        <Item Value="BuyerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="BuyerName">
+      <AttrNames>
+        <Item Value="BuyerName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="Style">
+      <AttrNames>
+        <Item Value="Style"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="Season">
+      <AttrNames>
+        <Item Value="Season"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="SplitBundles"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="SplitBundles"
+                  IsViewObjectMethod="false"/>
+    <listOfValues StaticList="false"
+                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                  Uses="LOV_TableNo" id="TableNo"/>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="AvgActualConsumption">
+      <AttrNames>
+        <Item Value="AvgActualConsumption"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="AvgConsumption_Calc"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="AvgConsumption_Calc"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="save" InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="save"
+                  IsViewObjectMethod="false"/>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="HeaderId">
+      <AttrNames>
+        <Item Value="HeaderId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="Calculate_Cons"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="Calculate_Cons"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AppModuleDataControl.methodResults.Calculate_Cons_AppModuleDataControl_dataProvider_Calculate_Cons_result">
+      <NamedData NDName="HeaderId" NDType="int"/>
+    </methodAction>
+    <tree IterBinding="MnjCutlyrcntrlWorkingpwrLView1Iterator"
+          id="MnjCutlyrcntrlWorkingpwrLView1">
+      <nodeDefinition DefName="model.views.MnjCutlyrcntrlWorkingpwrLView"
+                      Name="MnjCutlyrcntrlWorkingpwrLView10">
+        <AttrNames>
+          <Item Value="DivisionId"/>
+          <Item Value="SublineNo"/>
+          <Item Value="WorkingHourBasic"/>
+          <Item Value="ManpowerBasic"/>
+          <Item Value="WorkingHourOvertime"/>
+          <Item Value="ManpowerOvertime"/>
+          <Item Value="WorkingHourExtraot1"/>
+          <Item Value="ManPowerExtraot1"/>
+          <Item Value="WorkingHourExtraot2"/>
+          <Item Value="ManPowerExtraot2"/>
+          <Item Value="Attribute9"/>
+          <Item Value="Attribute10"/>
+          <Item Value="BuyerId"/>
+          <Item Value="Season"/>
+          <Item Value="Style"/>
+          <Item Value="Color"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MnjCutlyrcntrlOffstandardLView1Iterator"
+          id="MnjCutlyrcntrlOffstandardLView1">
+      <nodeDefinition DefName="model.views.MnjCutlyrcntrlOffstandardLView"
+                      Name="MnjCutlyrcntrlOffstandardLView10">
+        <AttrNames>
+          <Item Value="StitchingLine"/>
+          <Item Value="TotalStandad"/>
+          <Item Value="Remarks"/>
+          <Item Value="Attribute1"/>
+          <Item Value="Attribute2"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MnjCutlyrcntrlOffstandardDView1Iterator"
+          id="MnjCutlyrcntrlOffstandardDView1">
+      <nodeDefinition DefName="model.views.MnjCutlyrcntrlOffstandardDView"
+                      Name="MnjCutlyrcntrlOffstandardDView10">
+        <AttrNames>
+          <Item Value="CodeStandard"/>
+          <Item Value="Descreption"/>
+          <Item Value="Area"/>
+          <Item Value="TotalStandad"/>
+          <Item Value="Remarks"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MnjCutlyrcntrlWorkingpwrLView1Iterator"
+            id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MnjCutlyrcntrlWorkingpwrLView1Iterator" id="Delete3"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="MnjCutlyrcntrlOffstandardLView1Iterator"
+            id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MnjCutlyrcntrlOffstandardLView1Iterator" id="Delete4"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="MnjCutlyrcntrlOffstandardDView1Iterator"
+            id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MnjCutlyrcntrlOffstandardDView1Iterator" id="Delete5"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="CustomerName">
+      <AttrNames>
+        <Item Value="CustomerName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="StyleNew">
+      <AttrNames>
+        <Item Value="StyleNew"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="SeasonNew">
+      <AttrNames>
+        <Item Value="SeasonNew"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false"
+                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator" Uses="LOV_PocId"
+                  id="PocId"/>
+    <listOfValues StaticList="false"
+                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                  Uses="LOV_RPlanNo" id="RPlanNo"/>
+  </bindings>
+</pageDefinition>

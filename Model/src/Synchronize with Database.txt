@@ -1,0 +1,6 @@
+The following Synchronization Actions were performed successfully:
+
+Entity :MnjMfgCutlyrcntrlH
+  Create Attribute for column: USERID
+  Create Attribute for column: RESPID
+  Create Attribute for column: RESPAPPLID

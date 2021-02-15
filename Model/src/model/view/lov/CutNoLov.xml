@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CutNoLov"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.view.lov.CutNoLov_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_RATIONO"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.planNos]]></TransientExpression>
+  </Variable>
+  <Variable
+    Name="p_org_id"
+    Kind="where"
+    Type="java.lang.String"
+    IsUpdateable="false">
+    <TransientExpression><![CDATA[adf.context.sessionScope.orgId]]></TransientExpression>
+  </Variable>
+  <SQLQuery>
+    <![CDATA[SELECT 
+       DISTINCT CFL.CUT_NO,
+                L.MARKER_ID,
+                round((MMST.ACTUAL_YDS+(MMST.ACTUAL_INCH/36))/
+                (select sum(sl.CUTTING_RATIO)
+                  from MNJ_MFG_RATIOPLAN_SIZLINE sl
+                   where sl.RATIOPLAN_ID = mh.RATIOPLAN_ID
+                    and sl.PLYLINE_ID = pl.PLYLINE_ID),4)Actual_Consumption
+  FROM 
+       MNJ_MFG_RATIOPLAN           MH,
+       MNJ_MFG_RATIOPLAN_PLYLINE   PL,
+       MNJ_MFG_RATIOPLAN_PLYCFLINE CFL,
+       MNJ_MFG_SPREADING_T_L       MMST,
+       MNJ_MFG_MARHER_INFO_H       H, 
+       MNJ_MFG_MARHER_INFO_L       L,
+       MNJ_MFG_RATIOPLAN_SIZLINE
+ WHERE PL.RATIOPLAN_ID    = MH.RATIOPLAN_ID
+   AND PL.PLYLINE_ID      = CFL.PLYLINE_ID  
+   AND MMST.CUT_NUMBER    =  PL.CUT_NO
+   AND H.HEADER_ID = L.HEADER_ID
+   AND L.BRAND = MH.RATIOPLAN_NUMBER
+   AND L.MARKER_PLAN_NUMBER = PL.CUT_NO
+   AND L.MARKER_ID IS NOT NULL 
+  AND MH.RATIOPLAN_NUMBER = :P_RATIONO
+  AND H.DIVISION_ID = :p_org_id
+   and not exists 
+                 (SELECT * FROM MNJ_MFG_CUTLYRCNTRL_L MMR WHERE MMR.CUT_NO = CFL.CUT_NO)]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="CutNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CUT_NO"
+    Expression="CUT_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.lov.CutNoLov.CutNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MarkerId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MARKER_ID"
+    Expression="MARKER_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.lov.CutNoLov.MarkerId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ActualConsumption"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ACTUAL_CONSUMPTION"
+    Expression="ACTUAL_CONSUMPTION"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.lov.CutNoLov.ActualConsumption_LABEL"/>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

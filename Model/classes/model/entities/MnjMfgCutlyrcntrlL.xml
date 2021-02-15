@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MnjMfgCutlyrcntrlL"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="MNJ_MFG_CUTLYRCNTRL_L"
+  AliasName="MnjMfgCutlyrcntrlL"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.MnjMfgCutlyrcntrlLImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="HeaderId"
+    ColumnName="HEADER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LineId"
+    IsNotNull="true"
+    ColumnName="LINE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CutNo"
+    Precision="200"
+    ColumnName="CUT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MarkerId"
+    Precision="200"
+    ColumnName="MARKER_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartTime"
+    ColumnName="START_TIME"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EndTime"
+    ColumnName="END_TIME"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MinEndBit"
+    ColumnName="MIN_END_BIT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MinBunQty"
+    ColumnName="MIN_BUN_QTY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MaxBunQty"
+    ColumnName="MAX_BUN_QTY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TimeCal"
+    Precision="200"
+    ColumnName="TIME_CAL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActualConsumption"
+    ColumnName="ACTUAL_CONSUMPTION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_MFG_CUTLYRCNTRL_L">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MnjMfgCutlyrcntrlD"
+    Association="model.entities.MnjMfgCutlyrcntrlDFkAssoc"
+    AssociationEnd="model.entities.MnjMfgCutlyrcntrlDFkAssoc.MnjMfgCutlyrcntrlD"
+    AssociationOtherEnd="model.entities.MnjMfgCutlyrcntrlDFkAssoc.MnjMfgCutlyrcntrlL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MnjMfgCutlyrcntrlH"
+    Association="model.entities.MnjMfgCutlyrcntrlLFkAssoc"
+    AssociationEnd="model.entities.MnjMfgCutlyrcntrlLFkAssoc.MnjMfgCutlyrcntrlH"
+    AssociationOtherEnd="model.entities.MnjMfgCutlyrcntrlLFkAssoc.MnjMfgCutlyrcntrlL"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MnjMfgCutlyrcntrlBndLEO"
+    Association="model.entities.LineBundleAssoc"
+    AssociationEnd="model.entities.LineBundleAssoc.MnjMfgCutlyrcntrlBndLEO"
+    AssociationOtherEnd="model.entities.LineBundleAssoc.MnjMfgCutlyrcntrlL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="MnjMfgCutlyrcntrlLPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="MNJ_MFG_CUTLYRCNTRL_L_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjMfgCutlyrcntrlL.LineId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="MnjMfgCutlyrcntrlLFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MNJ_MFG_CUTLYRCNTRL_H_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="MNJ_MFG_CUTLYRCNTRL_L_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjMfgCutlyrcntrlL.HeaderId"/>
+    </AttrArray>
+  </Key>
+</Entity>

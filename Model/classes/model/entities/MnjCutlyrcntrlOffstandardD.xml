@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MnjCutlyrcntrlOffstandardD"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D"
+  AliasName="MnjCutlyrcntrlOffstandardD"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.MnjCutlyrcntrlOffstandardDImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="DetailId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubDetailId"
+    IsNotNull="true"
+    ColumnName="SUB_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CodeStandard"
+    Precision="250"
+    ColumnName="CODE_STANDARD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Descreption"
+    Precision="250"
+    ColumnName="DESCREPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Area"
+    Precision="250"
+    ColumnName="AREA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TotalStandad"
+    ColumnName="TOTAL_STANDAD"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Remarks"
+    Precision="250"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute3"
+    Precision="250"
+    ColumnName="ATTRIBUTE3"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute4"
+    Precision="250"
+    ColumnName="ATTRIBUTE4"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute5"
+    Precision="250"
+    ColumnName="ATTRIBUTE5"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MNJ_CUTLYRCNTRL_OFFSTANDARD_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MnjCutlyrcntrlOffstandardL"
+    Association="model.entities.MnjCutlyrcntrlOffstandarFkAssoc"
+    AssociationEnd="model.entities.MnjCutlyrcntrlOffstandarFkAssoc.MnjCutlyrcntrlOffstandardL"
+    AssociationOtherEnd="model.entities.MnjCutlyrcntrlOffstandarFkAssoc.MnjCutlyrcntrlOffstandardD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="MnjCutlyrcntrlOffStdDPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="MNJ_CUTLYRCNTRL_OFF_STD_D_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjCutlyrcntrlOffstandardD.SubDetailId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC001026518">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C001026518"/>
+      <Attr Name="_checkCondition" Value='"SUB_DETAIL_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjCutlyrcntrlOffstandardD.SubDetailId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="MnjCutlyrcntrlOffstandarFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MNJ_CUTLYRCNTRL_OFFSTANDARD_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="MNJ_CUTLYRCNTRL_OFFSTANDAR_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.MnjCutlyrcntrlOffstandardD.DetailId"/>
+    </AttrArray>
+  </Key>
+</Entity>
