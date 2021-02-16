@@ -20,7 +20,7 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[SELECT NULL cut_no,
+    <![CDATA[SELECT distinct NULL cut_no,
 DET.ROLL_NO roll_no,
 det.ROLL_LENGTH mark_length,
 det.ROLL_LENGTH2 mark_length2,
@@ -36,7 +36,8 @@ DET.CUT_WIDTH,
 P.SEASON,
 P.BUYER_ID,
 P.STYLE,
-DET.SUPP_ROLL_NO
+DET.SUPP_ROLL_NO,
+p.poc_id
 FROM MNJ_MFG_FABRIC_INS_TEST_L DET, MNJ_MFG_FABINS_PROD_L LINE,MNJ_MFG_FABRIC_INS_TEST_SHD_L SHDL,MNJ_MFG_FABINSTEST_SHD_LD SDD
 , xx_om_poc_H_t P , xx_om_poc_l_t S
 WHERE 1 = 1
@@ -366,6 +367,34 @@ ORDER BY DET.ROLL_NO]]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PocId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="POC_ID"
+    Expression="POC_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SystemId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SYSTEM_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
