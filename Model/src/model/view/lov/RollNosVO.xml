@@ -21,31 +21,34 @@
   </Properties>
   <SQLQuery>
     <![CDATA[SELECT NULL cut_no,
-       DET.ROLL_NO roll_no,
-       det.ROLL_LENGTH mark_length,
-       det.ROLL_LENGTH2 mark_length2,
-       det.SHRINK_PRC_LENGTH||det.SHRINK_PRC_WIDTH shrink_prcnt,
-       SHDL.SHADE shade,
-       NULL lay,
-       NULL lay_rem_qty,
-       NULL fabric_contain,
-       NULL cut_qty,
-       NULL end_bit,
-       null end_bit2,
-       DET.CUT_WIDTH,
-       line.SEASON,
-       line.BUYER_ID,
-       line.STYLE,
-       DET.SUPP_ROLL_NO
-  FROM MNJ_MFG_FABRIC_INS_TEST_L DET, MNJ_MFG_FABINS_PROD_L LINE,MNJ_MFG_FABRIC_INS_TEST_SHD_L SHDL,MNJ_MFG_FABINSTEST_SHD_LD SDD
- WHERE 1 = 1 
-   AND LINE.PROD_L_ID = DET.PROD_L_ID
-   AND LINE.PROD_L_ID = SHDL.PROD_L_ID
-   AND SHDL.LINE_ID = SDD.LINE_ID 
-   AND SDD.ROLL_NO = DET.ROLL_NO
-   AND LINE_TYPE= 'P'
-   AND NOT EXISTS
-                 ( SELECT * FROM MNJ_MFG_CUTLYRCNTRL_D MMC WHERE MMC.ROLL_NO = DET.ROLL_NO AND MMC.END_BIT_YDS IS NULL AND MMC.END_BIT_INCH IS NULL  )
+DET.ROLL_NO roll_no,
+det.ROLL_LENGTH mark_length,
+det.ROLL_LENGTH2 mark_length2,
+det.SHRINK_PRC_LENGTH||det.SHRINK_PRC_WIDTH shrink_prcnt,
+SHDL.SHADE shade,
+NULL lay,
+NULL lay_rem_qty,
+NULL fabric_contain,
+NULL cut_qty,
+NULL end_bit,
+null end_bit2,
+DET.CUT_WIDTH,
+P.SEASON,
+P.BUYER_ID,
+P.STYLE,
+DET.SUPP_ROLL_NO
+FROM MNJ_MFG_FABRIC_INS_TEST_L DET, MNJ_MFG_FABINS_PROD_L LINE,MNJ_MFG_FABRIC_INS_TEST_SHD_L SHDL,MNJ_MFG_FABINSTEST_SHD_LD SDD
+, xx_om_poc_H_t P , xx_om_poc_l_t S
+WHERE 1 = 1
+AND LINE.PROD_L_ID = DET.PROD_L_ID
+AND LINE.PROD_L_ID = SHDL.PROD_L_ID
+AND SHDL.LINE_ID = SDD.LINE_ID
+AND SDD.ROLL_NO = DET.ROLL_NO
+and S.system_id=LINE.system_id
+and S.poc_id=P.poc_id
+AND LINE_TYPE= 'P'
+AND NOT EXISTS
+( SELECT * FROM MNJ_MFG_CUTLYRCNTRL_D MMC WHERE MMC.ROLL_NO = DET.ROLL_NO AND MMC.END_BIT_YDS IS NULL AND MMC.END_BIT_INCH IS NULL )
 ORDER BY DET.ROLL_NO]]>
   </SQLQuery>
   <ViewAttribute
