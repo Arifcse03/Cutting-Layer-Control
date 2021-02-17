@@ -293,7 +293,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
 
         getDBTransaction().commit();
 
-        String stmnt = "mnj_cutlayrcntrl_pkg.make_bundles(?)";
+        String stmnt = "MNJ_CUTLAYRCNTRL_PKG.xx_make_bundles(?)";
         ViewObject vo = getMnjMfgCutlyrcntrlLView1();
         String lineId = vo.getCurrentRow().getAttribute("LineId").toString();
         callProcWithOneArgs(stmnt, lineId);
