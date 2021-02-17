@@ -585,7 +585,7 @@
                           <af:commandButton actionListener="#{bindings.Delete2.execute}"
                                             text="Delete"
                                             disabled="#{!bindings.Delete2.enabled}"
-                                            id="cb9"/>
+                                            id="cb9" partialSubmit="true"/>
                           <af:commandButton text="Make Bundles" id="cb10"
                                             actionListener="#{bindings.makeBundles.execute}"/>
                           <af:commandButton text="Split Bundle" id="cb14"
