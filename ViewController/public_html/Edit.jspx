@@ -78,7 +78,8 @@
                                     model="#{bindings.PocId.listOfValuesModel}"
                                     required="#{bindings.PocId.hints.mandatory}"
                                     columns="#{bindings.PocId.hints.displayWidth}"
-                                    shortDesc="#{bindings.PocId.hints.tooltip}">
+                                    shortDesc="#{bindings.PocId.hints.tooltip}"
+                                    readOnly="#{bindings.PocId.inputValue eq null ? 'false':'true'}">
                 <f:validator binding="#{bindings.PocId.validator}"/>
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.PocId.format}"/>
@@ -91,7 +92,8 @@
                                     model="#{bindings.RPlanNo.listOfValuesModel}"
                                     required="#{bindings.RPlanNo.hints.mandatory}"
                                     columns="#{bindings.RPlanNo.hints.displayWidth}"
-                                    shortDesc="#{bindings.RPlanNo.hints.tooltip}">
+                                    shortDesc="#{bindings.RPlanNo.hints.tooltip}"
+                                    readOnly="#{bindings.RPlanNo.inputValue eq null ? 'false':'true'}">
                 <f:validator binding="#{bindings.RPlanNo.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="BUYER:"
