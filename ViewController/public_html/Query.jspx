@@ -101,12 +101,20 @@
                            sortProperty="MarkerIdLine" filterable="true">
                   <af:outputText value="#{row.MarkerIdLine}" id="ot9"/>
                 </af:column>
-                <af:column headerText="POC ID"
-                           id="c1" align="center" sortable="true"
-                           filterable="true" sortProperty="PocId">
-                  <af:outputText value="#{row.PocId}" id="ot3">
+                <af:column headerText="SYSTEM_ID"
+                           id="c7" align="center" sortable="true"
+                           filterable="true" sortProperty="SystemId">
+                  <af:outputText value="#{row.SystemId}" id="ot11">
                     <af:convertNumber groupingUsed="false"
-                                      pattern="#{bindings.MnjMfgCutlyrcntrlHView1.hints.PocId.format}"/>
+                                      pattern="#{bindings.MnjMfgCutlyrcntrlHView1.hints.SystemId.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="POC ID"
+                           id="c1" align="center" sortable="false"
+                           filterable="true" sortProperty="PocIdShow">
+                  <af:outputText value="#{row.PocIdShow}" id="ot3">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.MnjMfgCutlyrcntrlHView1.hints.PocIdShow.format}"/>
                   </af:outputText>
                 </af:column>
                 <af:column headerText="Buyer"

@@ -133,6 +133,31 @@
     <DisplayCriteria
       Hint="showAndExecute"/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_SystemId"
+    ListVOName="POC_LOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_SystemId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SystemId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SystemId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PocId"/>
+      <Item Value="SystemId"/>
+      <Item Value="Buyer"/>
+      <Item Value="Style"/>
+      <Item Value="Season"/>
+      <Item Value="Color"/>
+      <Item Value="Wash"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
   <SQLQuery>
     <![CDATA[SELECT MnjMfgCutlyrcntrlH.HEADER_ID, 
        MnjMfgCutlyrcntrlH.HEADER_NO, 
@@ -163,14 +188,20 @@ MnjMfgCutlyrcntrlH.Avg_Actual_Consumption,
 MnjMfgCutlyrcntrlH.POC_ID
 ,
         AC.CUSTOMER_NAME,
-         poc.BUYER_ID CUSTOMER_ID_NEW,
-         poc.STYLE STYLE_NEW,
-         poC.SEASON SEASON_NEW
-FROM MNJ_MFG_CUTLYRCNTRL_H MnjMfgCutlyrcntrlH,XX_OM_POC_H_T  POC, AR_CUSTOMERS AC
+          PH.BUYER_ID CUSTOMER_ID_NEW,
+         PH.STYLE STYLE_NEW,
+         PH.SEASON SEASON_NEW,
+         MnjMfgCutlyrcntrlH.SYSTEM_ID,
+         PL.COLOR COLOR_NEW,
+         PL.WASH_NAME WASH_NEW,
+         PH.POC_ID POC_ID_Show
+         
+         
+FROM MNJ_MFG_CUTLYRCNTRL_H MnjMfgCutlyrcntrlH,XX_OM_POC_H_T  PH,XX_OM_POC_L_T  PL, AR_CUSTOMERS AC
 WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id 
-and       POC.POC_id= MnjMfgCutlyrcntrlH.POC_ID
-            and POC.BUYER_ID=AC.CUSTOMER_ID
-ORDER BY HEADER_ID desc]]>
+ and  PL.POC_id=PH.POC_id
+     and       Pl.SYSTEM_ID= MnjMfgCutlyrcntrlH.SYSTEM_ID
+            and PH.BUYER_ID=AC.CUSTOMER_ID]]>
   </SQLQuery>
   <EntityUsage
     Name="MnjMfgCutlyrcntrlH"
@@ -460,6 +491,65 @@ ORDER BY HEADER_ID desc]]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SystemId"
+    PrecisionRule="true"
+    EntityAttrName="SystemId"
+    EntityUsage="MnjMfgCutlyrcntrlH"
+    AliasName="SYSTEM_ID"
+    LOVName="LOV_SystemId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ColorNew"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COLOR_NEW"
+    Expression="COLOR_NEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WashNew"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="WASH_NEW"
+    Expression="WASH_NEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PocIdShow"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="POC_ID_SHOW"
+    Expression="POC_ID_SHOW"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
   <ViewCriteria

@@ -38,6 +38,8 @@
           <Item Value="CustomerName"/>
           <Item Value="StyleNew"/>
           <Item Value="SeasonNew"/>
+          <Item Value="SystemId"/>
+          <Item Value="PocIdShow"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

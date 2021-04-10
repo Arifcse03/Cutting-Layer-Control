@@ -211,12 +211,6 @@
         <Item Value="BuyerId"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
-                     id="BuyerName">
-      <AttrNames>
-        <Item Value="BuyerName"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="Style">
       <AttrNames>
         <Item Value="Style"/>
@@ -335,6 +329,12 @@
             Action="createInsertRow"/>
     <action IterBinding="MnjCutlyrcntrlOffstandardDView1Iterator" id="Delete5"
             RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <listOfValues StaticList="false"
+                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                  Uses="LOV_RPlanNo" id="RPlanNo"/>
+    <listOfValues StaticList="false"
+                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                  Uses="LOV_SystemId" id="SystemId"/>
     <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
                      id="CustomerName">
       <AttrNames>
@@ -353,11 +353,22 @@
         <Item Value="SeasonNew"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues StaticList="false"
-                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator" Uses="LOV_PocId"
-                  id="PocId"/>
-    <listOfValues StaticList="false"
-                  IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
-                  Uses="LOV_RPlanNo" id="RPlanNo"/>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="ColorNew">
+      <AttrNames>
+        <Item Value="ColorNew"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator" id="WashNew">
+      <AttrNames>
+        <Item Value="WashNew"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MnjMfgCutlyrcntrlHView1Iterator"
+                     id="PocIdShow">
+      <AttrNames>
+        <Item Value="PocIdShow"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

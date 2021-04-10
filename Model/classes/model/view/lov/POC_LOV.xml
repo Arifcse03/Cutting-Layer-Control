@@ -58,7 +58,7 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="10"/>
+          Value="50"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -234,7 +234,7 @@ AND H.LC_UNIT = :p_org]]>
         <DISPLAYHINT
           Value="Hide"/>
         <DISPLAYWIDTH
-          Value="10"/>
+          Value="40"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

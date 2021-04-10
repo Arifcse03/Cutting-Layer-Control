@@ -248,6 +248,16 @@ public class MnjMfgCutlyrcntrlHImpl extends EntityImpl {
             }
         }
         ,
+        SystemId {
+            public Object get(MnjMfgCutlyrcntrlHImpl obj) {
+                return obj.getSystemId();
+            }
+
+            public void put(MnjMfgCutlyrcntrlHImpl obj, Object value) {
+                obj.setSystemId((Number)value);
+            }
+        }
+        ,
         MnjMfgCutlyrcntrlL {
             public Object get(MnjMfgCutlyrcntrlHImpl obj) {
                 return obj.getMnjMfgCutlyrcntrlL();
@@ -328,6 +338,7 @@ public class MnjMfgCutlyrcntrlHImpl extends EntityImpl {
     public static final int SEASON = AttributesEnum.Season.index();
     public static final int AVGACTUALCONSUMPTION = AttributesEnum.AvgActualConsumption.index();
     public static final int POCID = AttributesEnum.PocId.index();
+    public static final int SYSTEMID = AttributesEnum.SystemId.index();
     public static final int MNJMFGCUTLYRCNTRLL = AttributesEnum.MnjMfgCutlyrcntrlL.index();
     public static final int MNJCUTLYRCNTRLWORKINGPWRL = AttributesEnum.MnjCutlyrcntrlWorkingpwrL.index();
     public static final int MNJCUTLYRCNTRLOFFSTANDARDL = AttributesEnum.MnjCutlyrcntrlOffstandardL.index();
@@ -699,6 +710,22 @@ public class MnjMfgCutlyrcntrlHImpl extends EntityImpl {
      */
     public void setPocId(Number value) {
         setAttributeInternal(POCID, value);
+    }
+
+    /**
+     * Gets the attribute value for SystemId, using the alias name SystemId.
+     * @return the SystemId
+     */
+    public Number getSystemId() {
+        return (Number)getAttributeInternal(SYSTEMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SystemId.
+     * @param value value to set the SystemId
+     */
+    public void setSystemId(Number value) {
+        setAttributeInternal(SYSTEMID, value);
     }
 
     /**
