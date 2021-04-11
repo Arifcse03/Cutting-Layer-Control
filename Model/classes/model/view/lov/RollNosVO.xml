@@ -37,7 +37,8 @@ P.SEASON,
 P.BUYER_ID,
 P.STYLE,
 DET.SUPP_ROLL_NO,
-p.poc_id
+p.poc_id,
+S.system_id
 FROM MNJ_MFG_FABRIC_INS_TEST_L DET, MNJ_MFG_FABINS_PROD_L LINE,MNJ_MFG_FABRIC_INS_TEST_SHD_L SHDL,MNJ_MFG_FABINSTEST_SHD_LD SDD
 , xx_om_poc_H_t P , xx_om_poc_l_t S
 WHERE 1 = 1
@@ -392,7 +393,8 @@ ORDER BY DET.ROLL_NO]]>
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="SYSTEM_ID"
-    SQLType="NUMERIC">
+    SQLType="NUMERIC"
+    Expression="SYSTEM_ID">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
