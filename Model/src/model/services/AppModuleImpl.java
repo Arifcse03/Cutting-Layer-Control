@@ -122,7 +122,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
 
         ViewObject vo = getRollNosVO1();
         //  vo.setWhereClause("CUT_NO = '"+getSelCutNo()+"'");
-        vo.setWhereClause("POC_ID = '" + getSeason() + "'" );
+        vo.setWhereClause("SYSTEM_ID = '" + getSeason() + "'" );
         
         /*+
                           " AND BUYER_ID = '" + getBuyerId() + "'" +
@@ -407,7 +407,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
         ViewObject vo = getMnjMfgCutlyrcntrlHView1();
         String Season = null;
         try {
-            Season = vo.getCurrentRow().getAttribute("PocId").toString();
+            Season = vo.getCurrentRow().getAttribute("SystemId").toString();
         } catch (Exception e) {
             // TODO: Add catch code
             e.printStackTrace();
