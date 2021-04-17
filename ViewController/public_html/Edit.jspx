@@ -71,17 +71,6 @@
                                     pattern="#{bindings.BuyerId.format}"/>
                 </af:outputText>
               </af:panelLabelAndMessage>
-              <af:inputListOfValues id="rPlanNoId"
-                                    popupTitle="Search and Select: #{bindings.RPlanNo.hints.label}"
-                                    value="#{bindings.RPlanNo.inputValue}"
-                                    label="Ratio Plan No:"
-                                    model="#{bindings.RPlanNo.listOfValuesModel}"
-                                    required="#{bindings.RPlanNo.hints.mandatory}"
-                                    columns="#{bindings.RPlanNo.hints.displayWidth}"
-                                    shortDesc="#{bindings.RPlanNo.hints.tooltip}"
-                                    readOnly="#{bindings.RPlanNo.inputValue eq null ? 'false':'true'}">
-                <f:validator binding="#{bindings.RPlanNo.validator}"/>
-              </af:inputListOfValues>
               <af:inputListOfValues id="systemIdId"
                                     popupTitle="Search and Select: #{bindings.SystemId.hints.label}"
                                     value="#{bindings.SystemId.inputValue}"
@@ -129,6 +118,17 @@
                 <af:outputText value="#{bindings.WashNew.inputValue}"
                                id="ot13"/>
               </af:panelLabelAndMessage>
+              <af:inputListOfValues id="rPlanNoId"
+                                    popupTitle="Search and Select: #{bindings.RPlanNo.hints.label}"
+                                    value="#{bindings.RPlanNo.inputValue}"
+                                    label="Ratio Plan No:"
+                                    model="#{bindings.RPlanNo.listOfValuesModel}"
+                                    required="#{bindings.RPlanNo.hints.mandatory}"
+                                    columns="#{bindings.RPlanNo.hints.displayWidth}"
+                                    shortDesc="#{bindings.RPlanNo.hints.tooltip}"
+                                    readOnly="#{bindings.RPlanNo.inputValue eq null ? 'false':'true'}">
+                <f:validator binding="#{bindings.RPlanNo.validator}"/>
+              </af:inputListOfValues>
               <af:panelLabelAndMessage label="Season / Lot"
                                        id="plam4" partialTriggers="rPlanNoId"
                                        visible="false">
