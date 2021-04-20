@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="model.services.AppModule">
-      <AppModuleConfig DeployPlatform="LOCAL" DBconnection="java:comp/env/jdbc/Conn1DS" password="apps" jbo.project="model.Model" user="apps" name="AppModuleLocal" jbo.txn.disconnect_level="1" ApplicationName="model.services.AppModule">
+      <AppModuleConfig DeployPlatform="LOCAL" DBconnection="java:comp/env/jdbc/Conn1DS" password="apps" jbo.project="model.Model" name="AppModuleLocal" user="apps" jbo.txn.disconnect_level="1" ApplicationName="model.services.AppModule">
          <AM-Pooling jbo.doconnectionpooling="true"/>
          <Database jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="model.services.AppModule"/>
