@@ -38,7 +38,8 @@
 mr.RATIOPLAN_NUMBER,
 mr.min_end_bit,
 mr.min_bnd_size,
-mr.max_bnd_size
+mr.max_bnd_size,
+pocH.Style
 from MNJ_MFG_RATIOPLAN mr, ar_customers ac,MNJ_MFG_SPREADING_T_H MMST,xx_om_poc_h_t pocH,xx_om_poc_L_t pocL
 where  mr.RATIOPLAN_NUMBER = MMST.PLAN_NUMBER
 AND MMST.TABLE_NO = :P_TABLE_NO
@@ -127,6 +128,21 @@ and pocH.poc_id=:POC_ID]]>
           Value="30"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Style"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STYLE"
+    Expression="STYLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
   </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle

@@ -79,39 +79,40 @@
                                     required="#{bindings.SystemId.hints.mandatory}"
                                     columns="#{bindings.SystemId.hints.displayWidth}"
                                     shortDesc="#{bindings.SystemId.hints.tooltip}"
-                                    readOnly="#{bindings.SystemId.inputValue eq null ? 'false' : 'true' }">
+                                    readOnly="#{bindings.SystemId.inputValue eq null ? 'false' : 'true' }"
+                                    autoSubmit="true">
                 <f:validator binding="#{bindings.SystemId.validator}"/>
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.SystemId.format}"/>
                 <af:autoSuggestBehavior suggestedItems="#{bindings.SystemId.suggestedItems}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="POC ID:"
-                                       id="plam8">
+                                       id="plam8" partialTriggers="systemIdId">
                 <af:outputText value="#{bindings.PocIdShow.inputValue}"
-                               id="ot14">
+                               id="ot14" partialTriggers="systemIdId">
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.PocIdShow.format}"/>
                 </af:outputText>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="BUYER:"
-                                       id="plam2">
+                                       id="plam2" partialTriggers="systemIdId">
                 <af:outputText value="#{bindings.CustomerName.inputValue}"
-                               id="ot4"/>
+                               id="ot4" partialTriggers="systemIdId"/>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="STYLE:"
-                                       id="plam3">
+                                       id="plam3" partialTriggers="systemIdId">
                 <af:outputText value="#{bindings.StyleNew.inputValue}"
-                               id="ot5"/>
+                               id="ot5" partialTriggers="systemIdId"/>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="SEASON:"
-                                       id="plam5">
+                                       id="plam5" partialTriggers="systemIdId">
                 <af:outputText value="#{bindings.SeasonNew.inputValue}"
-                               id="ot11"/>
+                               id="ot11" partialTriggers="systemIdId"/>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="COLOR:"
                                        id="plam6">
                 <af:outputText value="#{bindings.ColorNew.inputValue}"
-                               id="ot12"/>
+                               id="ot12" partialTriggers="systemIdId"/>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="WASH:"
                                        id="plam7">
@@ -126,7 +127,8 @@
                                     required="#{bindings.RPlanNo.hints.mandatory}"
                                     columns="#{bindings.RPlanNo.hints.displayWidth}"
                                     shortDesc="#{bindings.RPlanNo.hints.tooltip}"
-                                    readOnly="#{bindings.RPlanNo.inputValue eq null ? 'false':'true'}">
+                                    readOnly="#{bindings.RPlanNo.inputValue eq null ? 'false':'true'}"
+                                    partialTriggers="ot14 systemIdId">
                 <f:validator binding="#{bindings.RPlanNo.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Season / Lot"

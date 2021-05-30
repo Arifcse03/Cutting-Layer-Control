@@ -47,7 +47,7 @@
     ViewObjectName="model.view.lov.RatioPlan_lov_new">
     <ParameterMap>
       <PIMap Variable="POC_ID">
-        <TransientExpression><![CDATA[PocId]]></TransientExpression>
+        <TransientExpression><![CDATA[PocIdShow]]></TransientExpression>
       </PIMap>
       <PIMap Variable="P_TABLE_NO">
         <TransientExpression><![CDATA[TableNo]]></TransientExpression>
@@ -143,8 +143,22 @@
     <AttrArray Name="AttrNames">
       <Item Value="SystemId"/>
     </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CustomerName"/>
+      <Item Value="ColorNew"/>
+      <Item Value="PocIdShow"/>
+      <Item Value="StyleNew"/>
+      <Item Value="SeasonNew"/>
+      <Item Value="WashNew"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="SystemId"/>
+      <Item Value="Buyer"/>
+      <Item Value="Color"/>
+      <Item Value="PocId"/>
+      <Item Value="Style"/>
+      <Item Value="Season"/>
+      <Item Value="Wash"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PocId"/>
@@ -436,7 +450,6 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
   </ViewAttribute>
   <ViewAttribute
     Name="CustomerName"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="50"
@@ -448,10 +461,15 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="CustomerIdNew"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="oracle.jbo.domain.Number"
@@ -465,7 +483,6 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
   </ViewAttribute>
   <ViewAttribute
     Name="StyleNew"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="100"
@@ -477,10 +494,15 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="SeasonNew"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="30"
@@ -492,6 +514,12 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="SystemId"
@@ -509,7 +537,6 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
   </ViewAttribute>
   <ViewAttribute
     Name="ColorNew"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="30"
@@ -521,10 +548,15 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="WashNew"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="100"
@@ -536,10 +568,15 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="PocIdShow"
-    IsUpdateable="false"
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
@@ -551,6 +588,12 @@ WHERE MnjMfgCutlyrcntrlH.ORG_ID = :p_org_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewCriteria
     Name="SearchByDocNo"
